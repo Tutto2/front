@@ -1,10 +1,5 @@
 @import url("variables.css");
 @import url("typography.css");
-@import url("card.css");
-@import url("menu.css");
-@import url("badge.css");
-@import url("logo.css");
-@import url("content.css");
 
 .debug-black {
   border: 1px solid black;

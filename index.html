@@ -42,6 +42,7 @@
         class="relative flex justify-between items-center px-8 border-b-[0.12rem] bg-[#2e2e2e] z-20"
       >
         <div
+          id="main-title"
           class="text-slate-50 bangers tracking-wide text-3xl cursor-pointer hover:text-slate-200"
         >
           The Ultimate PokeAPI
@@ -49,11 +50,14 @@
 
         <form class="my-3">
           <input
+            name="filter"
+            id="filter"
             class="m-0 border-0 px-3 py-1 rounded-l-lg transition-transform duration-300 hover:shadow-inner hover:shadow-zinc-400"
             type="text"
             placeholder="Search by name"
           />
           <button
+            for="filter"
             class="text-white bg-zinc-700 border-0 m-0 mr-2 px-2 py-1 rounded-r-lg h-full pointer-events-auto transition-transform duration-300 hover:bg-zinc-600 hover:text-slate-200"
             type="submit"
           >
@@ -72,110 +76,111 @@
           >
             <div class="relative top-0 right-0">
               <img
+                id="logo"
                 class="w-[75%] absolute top-2 right-0 transition-transform cursor-pointer hover:scale-105"
                 src="./assets/images/logo.png"
                 alt="Pokemon logo"
               />
             </div>
             <ul class="flex flex-col justify-center ml-1 gap-[0.35rem]">
-              <li class="badge bg-slate-100 justify-center items-center text-center" id="all-types">All Types</li>
-              <li class="badge bg-normal" id="normal">
+              <li tabindex="0" class="badge bg-slate-100 justify-center items-center text-center" id="all-types">All Types</li>
+              <li tabindex="0" class="badge bg-normal" id="normal">
                 <img
                   class="small-logo"
                   src="./assets/images/Normal_Icon.png"
                 />Normal
               </li>
-              <li class="badge bg-fire" id="fire">
+              <li tabindex="0" class="badge bg-fire" id="fire">
                 <img
                   class="small-logo"
                   src="./assets/images/Fire_Icon.png"
                 />Fire
               </li>
-              <li class="badge bg-water" id="water">
+              <li tabindex="0" class="badge bg-water text-white" id="water">
                 <img
                   class="small-logo"
                   src="./assets/images/Water_Icon.png"
                 />Water
               </li>
-              <li class="badge bg-grass" id="grass">
+              <li tabindex="0" class="badge bg-grass" id="grass">
                 <img
                   class="small-logo"
                   src="./assets/images/Grass_Icon.png"
                 />Grass
               </li>
-              <li class="badge bg-electric" id="electric">
+              <li tabindex="0" class="badge bg-electric" id="electric">
                 <img
                   class="small-logo"
                   src="./assets/images/Electric_Icon.png"
                 />Electric
               </li>
-              <li class="badge bg-ice" id="ice">
+              <li tabindex="0" class="badge bg-ice" id="ice">
                 <img class="small-logo" src="./assets/images/Ice_Icon.png" />Ice
               </li>
-              <li class="badge bg-fighting" id="fighting">
+              <li tabindex="0" class="badge bg-fighting" id="fighting">
                 <img
                   class="small-logo"
                   src="./assets/images/Fighting_Icon.png"
                 />Fighting
               </li>
-              <li class="badge bg-poison" id="poison">
+              <li tabindex="0" class="badge bg-poison" id="poison">
                 <img
                   class="small-logo"
                   src="./assets/images/Poison_Icon.png"
                 />Poison
               </li>
-              <li class="badge bg-ground" id="ground">
+              <li tabindex="0" class="badge bg-ground" id="ground">
                 <img
                   class="small-logo"
                   src="./assets/images/Ground_Icon.png"
                 />Ground
               </li>
-              <li class="badge bg-flying" id="flying">
+              <li tabindex="0" class="badge bg-flying" id="flying">
                 <img
                   class="small-logo"
                   src="./assets/images/Flying_Icon.png"
                 />Flying
               </li>
-              <li class="badge bg-psychic" id="psychic">
+              <li tabindex="0" class="badge bg-psychic" id="psychic">
                 <img
                   class="small-logo"
                   src="./assets/images/Psychic_Icon.png"
                 />Psychic
               </li>
-              <li class="badge bg-bug" id="bug">
+              <li tabindex="0" class="badge bg-bug" id="bug">
                 <img class="small-logo" src="./assets/images/Bug_Icon.png" />Bug
               </li>
-              <li class="badge bg-rock" id="rock">
+              <li tabindex="0" class="badge bg-rock" id="rock">
                 <img
                   class="small-logo"
                   src="./assets/images/Rock_Icon.png"
                 />Rock
               </li>
-              <li class="badge bg-ghost" id="ghost">
+              <li tabindex="0" class="badge bg-ghost text-white" id="ghost">
                 <img
                   class="small-logo"
                   src="./assets/images/Ghost_Icon.png"
                 />Ghost
               </li>
-              <li class="badge bg-dragon" id="dragon">
+              <li tabindex="0" class="badge bg-dragon text-white" id="dragon">
                 <img
                   class="small-logo"
                   src="./assets/images/Dragon_Icon.png"
                 />Dragon
               </li>
-              <li class="badge bg-dark" id="dark">
+              <li tabindex="0" class="badge bg-dark text-white" id="dark">
                 <img
                   class="small-logo"
                   src="./assets/images/Dark_Icon.png"
                 />Dark
               </li>
-              <li class="badge bg-steel" id="steel">
+              <li tabindex="0" class="badge bg-steel" id="steel">
                 <img
                   class="small-logo"
                   src="./assets/images/Steel_Icon.png"
                 />Steel
               </li>
-              <li class="badge bg-fairy" id="fairy">
+              <li tabindex="0" class="badge bg-fairy" id="fairy">
                 <img
                   class="small-logo"
                   src="./assets/images/Fairy_Icon.png"
@@ -201,7 +206,7 @@
           class="flex flex-col justify-center items-center sticky top-40 h-[100vh]"
         >
           <ul
-            class="p-3 pr-2 rounded-l-2xl bg-slate-400 bg-opacity-75 text-3xl shadow-sm shadow-slate-700 pointer-events-auto transition-transform duration-300 hover:scale-105 hover:bg-zinc-400 hover:shadow-sm hover:shadow-slate-800"
+            class="p-3 pr-2 rounded-l-2xl bg-slate-400 bg-opacity-75 text-3xl shadow-sm shadow-slate-700 pointer-events-auto transition-transform duration-300 hover:scale-105 hover:brightness-90 hover:shadow-sm hover:shadow-slate-800"
           >
             <li class="m-1">
               <a href="https://github.com/Tutto2" target="_blank">

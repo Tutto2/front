@@ -7,6 +7,36 @@ document.addEventListener("DOMContentLoaded", function () {
   bindTypeBtn();
 });
 
+document.getElementById('main-title').addEventListener('click', function() {
+  location.reload();
+});
+
+document.getElementById('logo').addEventListener('click', function() {
+  window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+  });
+});
+
+document.getElementById('filter').addEventListener('input', function() {
+  const searchInput = document.getElementById('filter');
+  const pokemonList = document.getElementById('pokemon-list');
+  const poks = pokemonList.children;
+  const pokemons = pokemonList.getElementsByClassName('pokemon-info');
+  const userInput = searchInput.value.toLowerCase();
+
+  for (let i = 0; i < pokemons.length; i++) {
+    const pokemonName = pokemons[i].querySelector('.pokemon-name').textContent.toLowerCase();
+
+    if (pokemonName.includes(userInput)) {
+      poks[i].style.display = 'block';
+    } else {
+      poks[i].style.display = 'none';
+    };
+  }
+});
+
+
 document.getElementById('menuBtn').addEventListener('click', function() {
   const menu = document.getElementById('sideMenu');
   menu.classList.toggle('menu-open');
@@ -91,8 +121,8 @@ function showPokemon(pokemon) {
         <img class="max-h-[13rem]" src="${pokemon.sprites.other["official-artwork"].front_default}"/>
       </div>
     </div>
-    <div class="p-2">
-        <span class="absolute bottom-[5%] left-[1.1rem] px-2 pt-[0.6rem] pb-[0.8rem] bg-black text-white text-2xl text-center bangers tracking-widest" style="clip-path: ellipse(80% 28% at 50% 50%);">${pokemon.name}</span>
+    <div class="pokemon-info p-2">
+        <span class="pokemon-name absolute bottom-[5%] left-[1.1rem] px-2 pt-[0.6rem] pb-[0.8rem] bg-black text-white text-2xl text-center bangers tracking-widest" style="clip-path: ellipse(80% 28% at 50% 50%);">${pokemon.name}</span>
     </div>
   `;
 
