@@ -1,0 +1,27 @@
+@import url("variables.css");
+@import url("typography.css");
+@import url("card.css");
+@import url("menu.css");
+@import url("badge.css");
+@import url("logo.css");
+@import url("content.css");
+
+.debug-black {
+  border: 1px solid black;
+}
+
+.debug-green {
+  border: 1px solid forestgreen;
+}
+
+.debug-yellow {
+  border: 1px solid yellow;
+}
+
+.debug-red {
+  border: 1px solid rgb(238, 91, 91);
+}
+
+.debug-blue {
+  border: 1px solid cadetblue;
+}

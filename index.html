@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en" class="w-full h-full">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PokeAPI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Allan:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bangers&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="assets/css/output.css" />
+    <link rel="stylesheet" href="styles/main.css" />
+  </head>
+  <body class="font-sans w-full h-full">
+    <div
+      id="preloader"
+      class="fixed top-0 left-0 right-0 bottom-0 bg-stone-50 z-50 flex justify-center items-center bangers tracking-wider text-4xl"
+    >
+      LOADING...
+    </div>
+
+    <div id="main-content" class="hidden">
+      <header
+        class="relative flex justify-between items-center px-8 border-b-[0.12rem] bg-[#2e2e2e] z-20"
+      >
+        <div
+          class="text-slate-50 bangers tracking-wide text-3xl cursor-pointer hover:text-slate-200"
+        >
+          The Ultimate PokeAPI
+        </div>
+
+        <form class="my-3">
+          <input
+            class="m-0 border-0 px-3 py-1 rounded-l-lg transition-transform duration-300 hover:shadow-inner hover:shadow-zinc-400"
+            type="text"
+            placeholder="Search by name"
+          />
+          <button
+            class="text-white bg-zinc-700 border-0 m-0 mr-2 px-2 py-1 rounded-r-lg h-full pointer-events-auto transition-transform duration-300 hover:bg-zinc-600 hover:text-slate-200"
+            type="submit"
+          >
+            <i class="fa fa-search" aria-hidden="true"></i>
+          </button>
+        </form>
+      </header>
+
+      <main
+        class="flex bg-pokeball bg-repeat before:fixed before:-top-[0.2rem] before:w-full before:h-[100vh] before:bg-white before:bg-opacity-40 before:z-0"
+      >
+        <div class="relative">
+          <div
+            id="sideMenu"
+            class="flex flex-col justify-between sticky top-20 menu-closed pb-4 px-5 mt-3 max-w-44 h-[81.5vh] gap-3 bg-[rgba(46,46,46)] shadow-md shadow-black rounded-r-md"
+          >
+            <div class="relative top-0 right-0">
+              <img
+                class="w-[75%] absolute top-2 right-0 transition-transform cursor-pointer hover:scale-105"
+                src="./assets/images/logo.png"
+                alt="Pokemon logo"
+              />
+            </div>
+            <ul class="flex flex-col justify-center ml-1 gap-[0.35rem]">
+              <li class="badge bg-slate-100 justify-center items-center text-center" id="all-types">All Types</li>
+              <li class="badge bg-normal" id="normal">
+                <img
+                  class="small-logo"
+                  src="./assets/images/Normal_Icon.png"
+                />Normal
+              </li>
+              <li class="badge bg-fire" id="fire">
+                <img
+                  class="small-logo"
+                  src="./assets/images/Fire_Icon.png"
+                />Fire
+              </li>
+              <li class="badge bg-water" id="water">
+                <img
+                  class="small-logo"
+                  src="./assets/images/Water_Icon.png"
+                />Water
+              </li>
+              <li class="badge bg-grass" id="grass">
+                <img
+                  class="small-logo"
+                  src="./assets/images/Grass_Icon.png"
+                />Grass
+              </li>
+              <li class="badge bg-electric" id="electric">
+                <img
+                  class="small-logo"
+                  src="./assets/images/Electric_Icon.png"
+                />Electric
+              </li>
+              <li class="badge bg-ice" id="ice">
+                <img class="small-logo" src="./assets/images/Ice_Icon.png" />Ice
+              </li>
+              <li class="badge bg-fighting" id="fighting">
+                <img
+                  class="small-logo"
+                  src="./assets/images/Fighting_Icon.png"
+                />Fighting
+              </li>
+              <li class="badge bg-poison" id="poison">
+                <img
+                  class="small-logo"
+                  src="./assets/images/Poison_Icon.png"
+                />Poison
+              </li>
+              <li class="badge bg-ground" id="ground">
+                <img
+                  class="small-logo"
+                  src="./assets/images/Ground_Icon.png"
+                />Ground
+              </li>
+              <li class="badge bg-flying" id="flying">
+                <img
+                  class="small-logo"
+                  src="./assets/images/Flying_Icon.png"
+                />Flying
+              </li>
+              <li class="badge bg-psychic" id="psychic">
+                <img
+                  class="small-logo"
+                  src="./assets/images/Psychic_Icon.png"
+                />Psychic
+              </li>
+              <li class="badge bg-bug" id="bug">
+                <img class="small-logo" src="./assets/images/Bug_Icon.png" />Bug
+              </li>
+              <li class="badge bg-rock" id="rock">
+                <img
+                  class="small-logo"
+                  src="./assets/images/Rock_Icon.png"
+                />Rock
+              </li>
+              <li class="badge bg-ghost" id="ghost">
+                <img
+                  class="small-logo"
+                  src="./assets/images/Ghost_Icon.png"
+                />Ghost
+              </li>
+              <li class="badge bg-dragon" id="dragon">
+                <img
+                  class="small-logo"
+                  src="./assets/images/Dragon_Icon.png"
+                />Dragon
+              </li>
+              <li class="badge bg-dark" id="dark">
+                <img
+                  class="small-logo"
+                  src="./assets/images/Dark_Icon.png"
+                />Dark
+              </li>
+              <li class="badge bg-steel" id="steel">
+                <img
+                  class="small-logo"
+                  src="./assets/images/Steel_Icon.png"
+                />Steel
+              </li>
+              <li class="badge bg-fairy" id="fairy">
+                <img
+                  class="small-logo"
+                  src="./assets/images/Fairy_Icon.png"
+                />Fairy
+              </li>
+            </ul>
+          </div>
+
+          <button
+            id="menuBtn"
+            class="fixed top-20 text-2xl p-2 bg-[rgba(46,46,46)] bg-opacity-85 text-white rounded-r-lg hover:bg-slate-700 focus:outline-none"
+          >
+            ☰
+          </button>
+        </div>
+
+        <div
+          class="flex justify-center flex-wrap flex-1 ml-1 p-4 gap-4 max-w[88rem]"
+          id="pokemon-list"
+        ></div>
+
+        <div
+          class="flex flex-col justify-center items-center sticky top-40 h-[100vh]"
+        >
+          <ul
+            class="p-3 pr-2 rounded-l-2xl bg-slate-400 bg-opacity-75 text-3xl shadow-sm shadow-slate-700 pointer-events-auto transition-transform duration-300 hover:scale-105 hover:bg-zinc-400 hover:shadow-sm hover:shadow-slate-800"
+          >
+            <li class="m-1">
+              <a href="https://github.com/Tutto2" target="_blank">
+                <i class="link-icon fa fa-github"></i>
+              </a>
+            </li>
+            <li class="m-1">
+              <a
+                href="https://www.linkedin.com/in/carlos-augusto-herrera-orozco-2a7133281/"
+                target="_blank"
+              >
+                <i class="link-icon fa fa-linkedin-square"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </main>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>
