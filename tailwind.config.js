@@ -11,6 +11,9 @@ module.exports = {
       },
       backgroundImage: {
         'pokeball': "url('../images/background-img.jpg')"
+      },
+      screens: {
+        'xs': '495px',
       }
     },
   },

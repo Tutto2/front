@@ -98,7 +98,7 @@ async function fetchPokemons(url = "https://pokeapi.co/api/v2/pokemon?limit=100"
 function typesBadges(types) {
   return types
     .map(
-      ({ type }) => `<img class="h-7 min-w-7" src="./assets/images/${type.name}_Icon.png">`
+      ({ type }) => `<img class="h-5 min-w-5 sm:h-7 sm:min-w-7" src="./assets/images/${type.name}_Icon.png">`
     )
     .join("");
 }
@@ -114,15 +114,15 @@ function showPokemon(pokemon) {
   div.innerHTML = `
     <div class="card-bg-${typeClasses} flex flex-col justify-center h-[100%] p-2 rounded-md">
       <div>
-        <span class="absolute flex left-5 top-5 py-1 px-2 gap-1">${pokemonTypes}</span>
-        <span class="absolute right-6 top-5 text-3xl allan-bold text-zinc-800 transition-transform group-hover:text-zinc-100" style="text-shadow: 0.15rem 0.15rem 0.15rem rgb(195, 195, 195)">#${pokemon.id}</span>
+        <span class="absolute flex left-3 sm:left-5 top-5 py-1 px-2 gap-1">${pokemonTypes}</span>
+        <span class="absolute right-6 top-5 text-xl sm:text-3xl allan-bold text-zinc-800 transition-transform group-hover:text-zinc-100" style="text-shadow: 0.15rem 0.15rem 0.15rem rgb(195, 195, 195)">#${pokemon.id}</span>
       </div>
-      <div class="flex justify-center p-2 transition-transform hover:scale-110">
-        <img class="max-h-[13rem]" src="${pokemon.sprites.other["official-artwork"].front_default}"/>
+      <div class="relative flex justify-center p-2 transition-transform hover:scale-110">
+        <img class="scale-125 sm:scale-100 max-h-[13rem]" src="${pokemon.sprites.other["official-artwork"].front_default}"/>
       </div>
     </div>
     <div class="pokemon-info p-2">
-        <span class="pokemon-name absolute bottom-[5%] left-[1.1rem] px-2 pt-[0.6rem] pb-[0.8rem] bg-black text-white text-2xl text-center bangers tracking-widest" style="clip-path: ellipse(80% 28% at 50% 50%);">${pokemon.name}</span>
+        <span class="pokemon-name absolute bottom-[5%] left-[1.1rem] px-1 pt-[0.6rem] pb-[0.6rem] sm:px-2 sm:pt-[0.6rem] sm:pb-[0.8rem] bg-black text-white text-xl sm:text-2xl text-center bangers tracking-widest" style="clip-path: ellipse(80% 28% at 50% 50%);">${pokemon.name}</span>
     </div>
   `;
 

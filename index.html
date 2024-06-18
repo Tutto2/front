@@ -39,26 +39,26 @@
 
     <div id="main-content" class="hidden">
       <header
-        class="relative flex justify-between items-center px-8 border-b-[0.12rem] bg-[#2e2e2e] z-20"
+        class="relative flex flex-col xs:flex-row justify-between items-center px-8 border-b-[0.12rem] bg-[#2e2e2e] z-20"
       >
         <div
           id="main-title"
-          class="text-slate-50 bangers tracking-wide text-3xl cursor-pointer hover:text-slate-200"
+          class="text-slate-50 bangers text-2xl transition-transform sm:tracking-wide sm:text-3xl cursor-pointer hover:text-slate-200"
         >
           The Ultimate PokeAPI
         </div>
 
-        <form class="my-3">
+        <form class="flex justify-center my-3 h-[100%]">
           <input
             name="filter"
             id="filter"
-            class="m-0 border-0 px-3 py-1 rounded-l-lg transition-transform duration-300 hover:shadow-inner hover:shadow-zinc-400"
+            class="h-[1.7rem] sm:h-auto m-0 border-0 px-3 py-1 rounded-l-lg placeholder:text-sm sm:placeholder:text-[1rem] transition-transform duration-300 hover:shadow-inner hover:shadow-zinc-400"
             type="text"
             placeholder="Search by name"
           />
           <button
             for="filter"
-            class="text-white bg-zinc-700 border-0 m-0 mr-2 px-2 py-1 rounded-r-lg h-full pointer-events-auto transition-transform duration-300 hover:bg-zinc-600 hover:text-slate-200"
+            class="text-white bg-zinc-700 border-0 m-0 mr-2 px-2 py-1 rounded-r-lg h-[1.7rem] sm:h-auto text-sm sm:text-lg pointer-events-auto transition-transform duration-300 hover:bg-zinc-600 hover:text-slate-200"
             type="submit"
           >
             <i class="fa fa-search" aria-hidden="true"></i>
@@ -67,12 +67,12 @@
       </header>
 
       <main
-        class="flex bg-pokeball bg-repeat before:fixed before:-top-[0.2rem] before:w-full before:h-[100vh] before:bg-white before:bg-opacity-40 before:z-0"
+        class="flex bg-pokeball bg-repeat before:fixed before:-top-[0.2rem] before:w-full before:h-full before:bg-white before:bg-opacity-40 before:z-0"
       >
         <div class="relative">
           <div
             id="sideMenu"
-            class="flex flex-col justify-between sticky top-20 menu-closed pb-4 px-5 mt-3 max-w-44 h-[81.5vh] gap-3 bg-[rgba(46,46,46)] shadow-md shadow-black rounded-r-md"
+            class="flex flex-col justify-between sticky h-screen-short top-20 menu-closed pb-4 px-5 mt-3 min-w-[9.2rem] max-w-44 h-auto gap-3 bg-[rgba(46,46,46)] shadow-md shadow-black rounded-r-md"
           >
             <div class="relative top-0 right-0">
               <img
@@ -82,7 +82,7 @@
                 alt="Pokemon logo"
               />
             </div>
-            <ul class="flex flex-col justify-center ml-1 gap-[0.35rem]">
+            <ul class="flex flex-col justify-center mt-10 ml-1 gap-1 sm:gap-[0.35rem]">
               <li tabindex="0" class="badge bg-slate-100 justify-center items-center text-center" id="all-types">All Types</li>
               <li tabindex="0" class="badge bg-normal" id="normal">
                 <img
@@ -191,7 +191,7 @@
 
           <button
             id="menuBtn"
-            class="fixed top-20 text-2xl p-2 bg-[rgba(46,46,46)] bg-opacity-85 text-white rounded-r-lg hover:bg-slate-700 focus:outline-none"
+            class="fixed top-20 text:lg sm:text-2xl py-2 pr-[0.37rem] pl-1 sm:p-2 small-hamburger bg-[rgba(46,46,46)] bg-opacity-85 text-white rounded-r-lg hover:bg-slate-700 focus:outline-none"
           >
             ☰
           </button>
@@ -203,10 +203,10 @@
         ></div>
 
         <div
-          class="flex flex-col justify-center items-center sticky top-40 h-[100vh]"
+          class="flex flex-col justify-center items-center sticky top-24 h-[100vh]"
         >
           <ul
-            class="p-3 pr-2 rounded-l-2xl bg-slate-400 bg-opacity-75 text-3xl shadow-sm shadow-slate-700 pointer-events-auto transition-transform duration-300 hover:scale-105 hover:brightness-90 hover:shadow-sm hover:shadow-slate-800"
+            class="p-[0.175rem] sm:p-1 rounded-l-2xl bg-slate-400 bg-opacity-75 shadow-sm shadow-slate-700 pointer-events-auto transition-transform duration-300 hover:scale-105 hover:brightness-90 hover:shadow-sm hover:shadow-slate-800"
           >
             <li class="m-1">
               <a href="https://github.com/Tutto2" target="_blank">
